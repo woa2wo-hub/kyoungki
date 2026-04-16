@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+  <title>프로젝트 제목 — Portfolio</title>
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    onload="this.rel='stylesheet'" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script>
+
+    if (localStorage.getItem('portfolioTheme') === 'light') {
+      document.documentElement.classList.add('light-init');
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('light-mode');
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav scrolled" id="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <span class="nav__logo-dot"></span>
+        <span>PORTFOLIO</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="../index.html#intro">Intro</a></li>
+        <li><a href="../index.html#works">Works</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="테마 전환">
+        <span class="icon-dark">Dark</span>
+        <span class="icon-light">Light</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PROJECT HEADER -->
+  <div class="project-header">
+    <a href="../index.html#works" class="project-back">← Back to Works</a>
+
+    
+    <span class="card__tag card__tag--app" style="margin-bottom:20px; display:inline-block;">상세페이지</span>
+
+   
+    <h1 class="project-title">리얼투어<br />뉴욕 &nbsp; 투어상품</h1>
+
+    
+    <div class="project-meta-row">
+      <div class="project-meta-item">
+        <label>Year</label>
+        <span>2025</span>
+      </div>
+      <div class="project-meta-item">
+        <label>Category</label>
+        <span>Detail Page Design</span>
+      </div>
+      <div class="project-meta-item">
+        <label>Tools</label>
+        <span>Figma, Photoshop ,Illustrator</span>
+      </div>
+      <div class="project-meta-item">
+        <label>Role</label>
+        <span>Web Designer</span>
+      </div>
+    </div>
+  </div>
+
+  
+  <div style="max-width:var(--max-w); margin:0 auto; padding:0 40px;">
+    <a href="../images/detail/tripsub.png"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="project-hero-img"
+       style="aspect-ratio: unset;"
+       aria-label="프로젝트 사이트 방문">
+      <img src="../images/detail/tripsub.png"
+           alt="프로젝트 대표 이미지"
+           style="height: auto; object-fit: unset;"
+           onerror="this.style.display='none'" />
+      <span class="hero-img-badge">크게보기→</span>
+    </a>
+  </div>
+
+  <!-- PROJECT BODY -->
+  <div class="project-body">
+    <h2>디자인 컨셉</h2>
+    <p>
+      여행상품 판매 상세페이지는 여행지의 매력을 강조하고 흥미로운 경험을 부각하는 디자인입니다.<br>
+      <b>큰 이미지 배너<br>
+      다채로운 콘텐츠 배열<Br>
+      여행지 활동 강조<br>
+      시즌에 맞는 호소력 있는 색상</b>
+  </div>
+
+  
+
+  <!-- PREV / NEXT -->
+  <div class="project-nav">
+    <a href="../pages/responsive-05.html">← 이전 프로젝트</a>
+    <a href="../index.html#works">모든 작품 보기</a>
+    <a href="../pages/detail-02.html">다음 프로젝트 →</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <span>© 2026 Portfolio. Designed by <strong>Kyoungki</strong></span>
+      <span>Web Designer</span>
+    </div>
+  </footer>
+
+  <script>
+    if (localStorage.getItem('portfolioTheme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+    const tt = document.getElementById('themeToggle');
+    if (tt) {
+      tt.addEventListener('click', () => {
+        const isLight = document.body.classList.toggle('light-mode');
+        localStorage.setItem('portfolioTheme', isLight ? 'light' : 'dark');
+      });
+    }
+    /* nav 스크롤 */
+    const nav = document.getElementById('nav');
+    if (nav) {
+      window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 60);
+      });
+    }
+  </script>
+</body>
+</html>

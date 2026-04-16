@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>프로젝트 제목 — Portfolio</title>
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    onload="this.rel='stylesheet'" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script>
+   
+    if (localStorage.getItem('portfolioTheme') === 'light') {
+      document.documentElement.classList.add('light-init');
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('light-mode');
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav scrolled" id="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <span class="nav__logo-dot"></span>
+        <span>PORTFOLIO</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="../index.html#intro">Intro</a></li>
+        <li><a href="../index.html#works">Works</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="테마 전환">
+        <span class="icon-dark">Dark</span>
+        <span class="icon-light">Light</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PROJECT HEADER -->
+  <div class="project-header">
+    <a href="../index.html#works" class="project-back">← Back to Works</a>
+
+    <span class="card__tag card__tag--app" style="margin-bottom:20px; display:inline-block;">반응형 웹</span>
+
+    <h1 class="project-title">리얼투어 여행사</h1>
+
+    <div class="project-meta-row">
+      <div class="project-meta-item">
+        <label>Year</label>
+        <span>2025</span>
+      </div>
+      <div class="project-meta-item">
+        <label>Category</label>
+        <span>Responsive Web Design</span>
+      </div>
+      <div class="project-meta-item">
+        <label>Tools</label>
+        <span>Figma, Photoshop, Illustrator, Gpt</span>
+      </div>
+      <div class="project-meta-item">
+        <label>Role</label>
+        <span>web Designer</span>
+      </div>
+    </div>
+  </div>
+
+  
+  <div style="max-width:var(--max-w); margin:0 auto; padding:0 40px;">
+    <a href="https://woa2wo-hub.github.io/trip/"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="project-hero-img"
+       aria-label="프로젝트 사이트 방문">
+      <div style="width: 100%; overflow: hidden;">
+      <video
+        autoplay muted loop playsinline
+         oncanplay="this.playbackRate=2"
+        style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <source src="../videos/Trip.mov" type="video/mp4">
+      </video>
+    </div>
+    <span class="hero-img-badge">사이트 방문 →</span>
+    </a>
+    </div>
+
+  <!-- PROJECT BODY -->
+  <div class="project-body">
+    <h2>주제 선정 이유</h2>
+    <p>Real Tour는 뉴욕 여행을 위한 다양한 투어와 티켓 서비스를 제공하는 플랫폼으로, 
+      기존에는 정보가 분산되어 있어 사용자들이 원하는 투어나 티켓을 쉽게 찾기 어려웠기 때문에, 
+      이를 해결하고자 하나의 통합된 플랫폼에서 쉽게 예약하고 정보를 제공할 수 있도록 웹사이트를 제작했습니다.</p>
+
+    <h2>디자인 컨셉</h2>
+    <p>
+      Real Tour 웹사이트는 직관적이고 깔끔한 디자인을 채택하여, 뉴욕의 다양한 투어와 티켓 정보를 쉽게 탐색하고 예약할 수 있도록 설계했습니다. 
+      다채로운 이미지와 함께 각 투어 및 티켓의 특성을 잘 표현하고, 사용자들이 원하는 정보를 빠르게 찾을 수 있도록 UI를 간결하게 구성했습니다. 
+      또한, 프로모션 및 후기 섹션을 통해 방문객들이 신뢰감을 느낄 수 있도록 하여, 직관적이고 참여를 유도하는 디자인을 구현했습니다.
+    </p>
+</div>
+
+ 
+  <!-- PREV / NEXT -->
+  <div class="project-nav">
+    <a href="../pages/responsive-04.html">← 이전 프로젝트</a>
+    <a href="../index.html#works">모든 작품 보기</a>
+    <a href="../pages/detail-01.html">다음 프로젝트 →</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <span>© 2026 Portfolio. Designed by <strong>KyoungKi</strong></span>
+      <span>Web Designer</span>
+    </div>
+  </footer>
+
+  <script>
+    if (localStorage.getItem('portfolioTheme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+    const tt = document.getElementById('themeToggle');
+    if (tt) {
+      tt.addEventListener('click', () => {
+        const isLight = document.body.classList.toggle('light-mode');
+        localStorage.setItem('portfolioTheme', isLight ? 'light' : 'dark');
+      });
+    }
+    /* nav 스크롤 */
+    const nav = document.getElementById('nav');
+    if (nav) {
+      window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 60);
+      });
+    }
+  </script>
+</body>
+</html>

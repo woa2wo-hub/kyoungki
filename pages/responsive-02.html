@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>프로젝트 제목 — Portfolio</title>
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    onload="this.rel='stylesheet'" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script>
+
+    if (localStorage.getItem('portfolioTheme') === 'light') {
+      document.documentElement.classList.add('light-init');
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('light-mode');
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav scrolled" id="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <span class="nav__logo-dot"></span>
+        <span>PORTFOLIO</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="../index.html#intro">Intro</a></li>
+        <li><a href="../index.html#works">Works</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="테마 전환">
+        <span class="icon-dark">Dark</span>
+        <span class="icon-light">Light</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PROJECT HEADER -->
+  <div class="project-header">
+    <a href="../index.html#works" class="project-back">← Back to Works</a>
+
+    <span class="card__tag card__tag--app" style="margin-bottom:20px; display:inline-block;">반응형 웹</span>
+
+    <h1 class="project-title">MoDoc<br />(모닥)</h1>
+
+    <div class="project-meta-row">
+      <div class="project-meta-item">
+        <label>Year</label>
+        <span>2025</span>
+      </div>
+      <div class="project-meta-item">
+        <label>Category</label>
+        <span>Responsive Web Design</span>
+      </div>
+      <div class="project-meta-item">
+        <label>Tools</label>
+        <span>Figma, Photoshop, Illustrator, Gpt</span>
+      </div>
+      <div class="project-meta-item">
+        <label>Role</label>
+        <span>Web Designer</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:var(--max-w); margin:0 auto; padding:0 40px;">
+    <a href="https://woa2wo-hub.github.io/modocapp/"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="project-hero-img"
+       aria-label="프로젝트 사이트 방문">
+      <div style="width: 100%; overflow: hidden;">
+      <video
+        autoplay muted loop playsinline
+         oncanplay="this.playbackRate=2"
+        style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <source src="../videos/modoc.mov" type="video/mp4">
+      </video>
+    </div>
+      <span class="hero-img-badge">사이트 방문 →</span>
+    </a>
+  </div>
+
+  <!-- PROJECT BODY -->
+  <div class="project-body">
+    <h2>주제 선정 이유</h2>
+    <p>비대면 진료 서비스를 제공하는 병원 파트너들이 쉽게 접근하고 연락할 수 있는 플랫폼이 필요하다는 점에서, 
+      병원 파트너들이 서비스를 쉽게 찾고, 편리하게 연락할 수 있는 웹페이지를 기획하게 되었습니다.  </p>
+
+    <h2>디자인 컨셉</h2>
+    <p>
+      병원 파트너들이 빠르고 쉽게 서비스를 확인하고 접근할 수 있도록 직관적인 UI/UX 디자인을 적용했습니다. 
+      간결하고 현대적인 디자인을 통해 사용자 경험을 최적화했으며, 신뢰감을 주는 색상과 요소들을 사용하여, 
+      병원 파트너들에게 안정적인 이미지를 전달하고자 했습니다. 
+      사용자가 바로 앱을 다운로드할 수 있도록 앱스토어 버튼을 추가하여,손쉽게 앱을 설치하고 서비스를 이용할 수 있게 디자인했습니다.
+    </p>
+  </div>
+
+  
+
+  <!-- PREV / NEXT -->
+  <div class="project-nav">
+    <a href="../pages/responsive-01.html">← 이전 프로젝트</a>
+    <a href="../index.html#works">모든 작품 보기</a>
+    <a href="../pages/responsive-03.html">다음 프로젝트 →</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <span>© 2026 Portfolio. Designed by <strong>KyoungKi</strong></span>
+      <span>Web Designer</span>
+    </div>
+  </footer>
+
+  <script>
+    if (localStorage.getItem('portfolioTheme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+    const tt = document.getElementById('themeToggle');
+    if (tt) {
+      tt.addEventListener('click', () => {
+        const isLight = document.body.classList.toggle('light-mode');
+        localStorage.setItem('portfolioTheme', isLight ? 'light' : 'dark');
+      });
+    }
+    /* nav 스크롤 */
+    const nav = document.getElementById('nav');
+    if (nav) {
+      window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 60);
+      });
+    }
+  </script>
+</body>
+</html>

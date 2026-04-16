@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>프로젝트 제목 — Portfolio</title>
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    onload="this.rel='stylesheet'" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script>
+  
+    if (localStorage.getItem('portfolioTheme') === 'light') {
+      document.documentElement.classList.add('light-init');
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('light-mode');
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav scrolled" id="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <span class="nav__logo-dot"></span>
+        <span>PORTFOLIO</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="../index.html#intro">Intro</a></li>
+        <li><a href="../index.html#works">Works</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="테마 전환">
+        <span class="icon-dark">Dark</span>
+        <span class="icon-light">Light</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PROJECT HEADER -->
+  <div class="project-header">
+    <a href="../index.html#works" class="project-back">← Back to Works</a>
+
+   
+    <span class="card__tag card__tag--app" style="margin-bottom:20px; display:inline-block;">반응형 웹</span>
+
+    
+    <h1 class="project-title">빈 &nbsp; 아뜰리에</h1>
+
+    
+    <div class="project-meta-row">
+      <div class="project-meta-item">
+        <label>Year</label>
+        <span>2025</span>
+      </div>
+      <div class="project-meta-item">
+        <label>Category</label>
+        <span>Responsive Web Design</span>
+      </div>
+      <div class="project-meta-item">
+        <label>Tools</label>
+        <span>Illustrator, Figma, Photoshop</span>
+      </div>
+      <div class="project-meta-item">
+        <label>Role</label>
+        <span>Web Designer</span>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div style="max-width:var(--max-w); margin:0 auto; padding:0 40px;">
+    <a href="https://woa2wo-hub.github.io/bean/"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="project-hero-img"
+       aria-label="프로젝트 사이트 방문">
+      <div style="width: 100%; overflow: hidden;">
+      <video
+        autoplay muted loop playsinline
+         oncanplay="this.playbackRate=2"
+        style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <source src="../videos/cafe.mov" type="video/mp4">
+      </video>
+    </div>
+    <span class="hero-img-badge">사이트 방문 →</span>
+    </a>
+    </div>
+
+  <!-- PROJECT BODY -->
+  <div class="project-body">
+    <h2>주제 선정 이유</h2>
+    <p>빈 아뜰리에는 스페셜티 커피의 전문성을 강조하며, 일반적인 카페와는 다른 B2B 원두 납품 사업의 신뢰성을 전달하기 위해 웹사이트를 제작했습니다. 
+      기존의 정보 전달 방식에서 벗어나, 원두 납품에 대한 진심과 전문성을 체계적이고 직관적으로 보여줄 수 있는 플랫폼이 필요했습니다. 
+      이를 통해, 원두 납품 사업의 전문성뿐만 아니라 빈 아뜰리에의 브랜드 가치를 더 많은 기업 고객들에게 전달하고자 했습니다.</p>
+
+    <h2>디자인 컨셉</h2>
+    <p>
+      빈 아뜰리의 웹사이트는 브랜드의 전문성과 진심을 전달하기 위해 세련된 미니멀 디자인을 채택했습니다. 
+      지속 가능한 스페셜티 커피 브랜드로서의 이미지를 강조하고, B2B 고객들이 쉽게 접근하고 원두에 대한 정보를 파악할 수 있도록 직관적인 레이아웃을 사용했습니다. 
+      고급스러운 색감과 함께, 빈 아뜰리의 깊이 있는 커피 철학을 잘 전달할 수 있는 이미지와 콘텐츠로 구성하여, 신뢰성과 전문성을 강조한 디자인을 구현했습니다.
+    </p>
+</div>
+
+
+  <!-- PREV / NEXT -->
+  <div class="project-nav">
+    <a href="../pages/responsive-03.html">← 이전 프로젝트</a>
+    <a href="../index.html#works">모든 작품 보기</a>
+    <a href="../pages/responsive-05.html">다음 프로젝트 →</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <span>© 2026 Portfolio. Designed by <strong>Kyoungki</strong></span>
+      <span>Web Designer</span>
+    </div>
+  </footer>
+
+  <script>
+    /* 테마 초기화 + 토글 */
+    if (localStorage.getItem('portfolioTheme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+    const tt = document.getElementById('themeToggle');
+    if (tt) {
+      tt.addEventListener('click', () => {
+        const isLight = document.body.classList.toggle('light-mode');
+        localStorage.setItem('portfolioTheme', isLight ? 'light' : 'dark');
+      });
+    }
+    /* nav 스크롤 */
+    const nav = document.getElementById('nav');
+    if (nav) {
+      window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 60);
+      });
+    }
+  </script>
+</body>
+</html>

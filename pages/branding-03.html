@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ✏️ 프로젝트 제목 변경 -->
+  <title>프로젝트 제목 — Portfolio</title>
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    onload="this.rel='stylesheet'" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script>
+    /* 테마 깜빡임 방지 */
+    if (localStorage.getItem('portfolioTheme') === 'light') {
+      document.documentElement.classList.add('light-init');
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('light-mode');
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav scrolled" id="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <span class="nav__logo-dot"></span>
+        <span>PORTFOLIO</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="../index.html#intro">Intro</a></li>
+        <li><a href="../index.html#works">Works</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="테마 전환">
+        <span class="icon-dark">🌙</span>
+        <span class="icon-light">☀️</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PROJECT HEADER -->
+  <div class="project-header">
+    <a href="../index.html#works" class="project-back">← Back to Works</a>
+
+    <!-- ✏️ 태그: card__tag--app / --responsive / --detail / --branding -->
+    <span class="card__tag card__tag--app" style="margin-bottom:20px; display:inline-block;">완성형 앱</span>
+
+    <!-- ✏️ 프로젝트 제목 -->
+    <h1 class="project-title">프로젝트 제목을<br />입력하세요</h1>
+
+    <!-- ✏️ 메타 정보 -->
+    <div class="project-meta-row">
+      <div class="project-meta-item">
+        <label>Year</label>
+        <span>2024</span>
+      </div>
+      <div class="project-meta-item">
+        <label>Category</label>
+        <span>Brand Identity</span>
+      </div>
+      <div class="project-meta-item">
+        <label>Tools</label>
+        <span>Figma, Photoshop</span>
+      </div>
+      <div class="project-meta-item">
+        <label>Role</label>
+        <span>UI/UX Designer</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       HERO IMAGE
+       ✏️ 수정 방법:
+       1) href="https://your-site-url.com" → 연결할 사이트 URL
+       2) img src → 대표 이미지 경로
+       3) 사이트 링크 없으면 <a> → <div> 로 태그 변경
+  ====================================================== -->
+  <div style="max-width:var(--max-w); margin:0 auto; padding:0 40px;">
+    <a href="https://your-site-url.com"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="project-hero-img"
+       aria-label="프로젝트 사이트 방문">
+      <img src="../images/thumbnails/branding-03.jpg"
+           alt="프로젝트 대표 이미지"
+           onerror="this.style.display='none'" />
+      <span class="hero-img-badge">사이트 방문 →</span>
+    </a>
+  </div>
+
+  <!-- PROJECT BODY -->
+  <div class="project-body">
+    <h2>프로젝트 개요</h2>
+    <p>
+      이 프로젝트에 대한 전반적인 설명을 여기에 작성하세요.
+      어떤 목적으로 만들었는지, 어떤 사용자를 대상으로 했는지 등을 서술합니다.
+    </p>
+
+    <h2>디자인 컨셉</h2>
+    <p>
+      디자인 방향성과 컨셉에 대해 설명하세요.
+      색상, 타이포그래피, 레이아웃 등 주요 디자인 결정 사항을 작성합니다.
+    </p>
+
+    <h2>주요 기능 & 화면</h2>
+    <p>
+      주요 기능이나 화면 구성에 대해 설명하세요.
+      사용자 흐름(User Flow), 주요 인터랙션 등을 기술합니다.
+    </p>
+
+    <h2>결과 & 회고</h2>
+    <p>프로젝트를 통해 배운 점이나 아쉬운 점 등 회고 내용을 작성하세요.</p>
+  </div>
+
+  <!-- GALLERY -->
+  <div class="project-gallery">
+    <!-- ✏️ 갤러리 이미지 경로 수정 -->
+    <img src="../images/thumbnails/branding-03.jpg" alt="스크린샷 1" onerror="this.style.background='var(--bg-3)'" />
+    <img src="../images/thumbnails/branding-03.jpg" alt="스크린샷 2" onerror="this.style.background='var(--bg-3)'" />
+    <img src="../images/thumbnails/branding-03.jpg" alt="스크린샷 3" onerror="this.style.background='var(--bg-3)'" />
+    <img src="../images/thumbnails/branding-03.jpg" alt="스크린샷 4" onerror="this.style.background='var(--bg-3)'" />
+  </div>
+
+  <!-- PREV / NEXT -->
+  <div class="project-nav">
+    <!-- ✏️ 이전/다음 프로젝트 링크 수정 -->
+    <a href="#">← 이전 프로젝트</a>
+    <a href="../index.html#works">모든 작품 보기</a>
+    <a href="#">다음 프로젝트 →</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <span>© 2024 Portfolio. Designed by <strong>Your Name</strong></span>
+      <span>Web Designer</span>
+    </div>
+  </footer>
+
+  <script>
+    /* 테마 초기화 + 토글 */
+    if (localStorage.getItem('portfolioTheme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+    const tt = document.getElementById('themeToggle');
+    if (tt) {
+      tt.addEventListener('click', () => {
+        const isLight = document.body.classList.toggle('light-mode');
+        localStorage.setItem('portfolioTheme', isLight ? 'light' : 'dark');
+      });
+    }
+    /* nav 스크롤 */
+    const nav = document.getElementById('nav');
+    if (nav) {
+      window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 60);
+      });
+    }
+  </script>
+</body>
+</html>

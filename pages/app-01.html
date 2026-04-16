@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>프로젝트 제목 — Portfolio</title>
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    onload="this.rel='stylesheet'" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script>
+    if (localStorage.getItem('portfolioTheme') === 'light') {
+      document.documentElement.classList.add('light-init');
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('light-mode');
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav scrolled" id="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <span class="nav__logo-dot"></span>
+        <span>PORTFOLIO</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="../index.html#intro">Intro</a></li>
+        <li><a href="../index.html#works">Works</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="테마 전환">
+        <span class="icon-dark">Dark</span>
+        <span class="icon-light">Light</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PROJECT HEADER -->
+  <div class="project-header">
+    <a href="../index.html#works" class="project-back">← Back to Works</a>
+
+    
+    <span class="card__tag card__tag--app" style="margin-bottom:20px; display:inline-block;">앱</span>
+
+   
+    <h1 class="project-title">ONEDAY(원데이)</h1>
+
+    
+    <div class="project-meta-row">
+      <div class="project-meta-item">
+        <label>Year</label>
+        <span>2026</span>
+      </div>
+      <div class="project-meta-item">
+        <label>Category</label>
+        <span>App Design · UI/UX</span>
+      </div>
+      <div class="project-meta-item">
+        <label>Tools</label>
+        <span>Figma, Photoshop, Cluade, Gpt</span>
+      </div>
+      <div class="project-meta-item">
+        <label>Role</label>
+        <span>Product Designer & Developer</span>
+      </div>
+    </div>
+  </div>
+
+  
+  <div style="max-width:var(--max-w); margin:0 auto; padding:0 40px; display:flex; gap:40px; align-items:flex-start;">
+  
+  <!-- 왼쪽: 비디오 -->
+<div style="flex:1; display:flex; flex-direction:column; align-items:center;">
+
+  <!-- 비디오 (기본으로 보임) -->
+  <div id="videoWrap" style="width:100%;">
+    <a href="#" onclick="showApp(); return false;"
+       class="project-hero-img vertical"
+       aria-label="앱 체험하기">
+      <video id="appVideo" autoplay muted loop playsinline
+      oncanplay="this.playbackRate=2"
+        style="width: 100%; height: auto; display: block;">
+        <source src="../videos/app.mov" type="video/mp4">
+      </video>
+      <span class="hero-img-badge">앱 체험하기→</span>
+    </a>
+  </div>
+
+  <!-- iframe (기본으로 숨김) -->
+  <div id="iframeWrap" style="display:none; flex-direction:column; align-items:center; gap:12px;">
+    <iframe src="https://oneday-v7.vercel.app"
+            style="width:390px; height:700px; border:none; border-radius:24px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+    </iframe>
+    <button onclick="showVideo()" 
+            style="background:var(--accent); color:#fff; border:none; padding:8px 20px; border-radius:var(--radius-sm); font-size:12px; font-weight:700; cursor:pointer;">
+      ← 돌아가기
+    </button>
+  </div>
+
+</div>
+ <!-- 오른쪽: png -->
+ <div style="flex:2; height:690px; overflow-y:auto; border-radius:var(--radius);">
+  <img src="../images/oneday-1.png" 
+       style="width:100%; height:auto; display:block;">
+</div>
+
+</div>
+
+  <!-- PREV / NEXT -->
+  <div class="project-nav">
+    <a href="#">← 이전 프로젝트</a>
+    <a href="../index.html#works">모든 작품 보기</a>
+    <a href="../pages/responsive-01.html">다음 프로젝트 →</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <span>© 2026 Portfolio. Designed by <strong>kyoungki</strong></span>
+      <span>Web Designer</span>
+    </div>
+  </footer>
+
+  <script>
+    if (localStorage.getItem('portfolioTheme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+    const tt = document.getElementById('themeToggle');
+    if (tt) {
+      tt.addEventListener('click', () => {
+        const isLight = document.body.classList.toggle('light-mode');
+        localStorage.setItem('portfolioTheme', isLight ? 'light' : 'dark');
+      });
+    }
+    /* nav 스크롤 */
+    const nav = document.getElementById('nav');
+    if (nav) {
+      window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 60);
+      });
+    }
+     
+    let timer;
+    window.addEventListener('resize', () => {
+      clearTimeout(timer);
+      timer = setTimeout(resizePdf, 100);
+    });
+
+    function showApp() {
+    document.getElementById('videoWrap').style.display = 'none';
+    document.getElementById('iframeWrap').style.display = 'flex';
+  }
+  function showVideo() {
+    document.getElementById('iframeWrap').style.display = 'none';
+    document.getElementById('videoWrap').style.display = 'block';
+  }
+  function setSpeed(speed) {
+    document.getElementById('appVideo').playbackRate = speed;
+  }
+  function showApp() {
+    document.getElementById('videoWrap').style.display = 'none';
+    document.getElementById('iframeWrap').style.display = 'flex';
+  }
+  function showVideo() {
+    document.getElementById('iframeWrap').style.display = 'none';
+    document.getElementById('videoWrap').style.display = 'block';
+  }
+  </script>
+</body>
+</html>

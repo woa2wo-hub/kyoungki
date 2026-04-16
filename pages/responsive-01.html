@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>프로젝트 제목 — Portfolio</title>
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    onload="this.rel='stylesheet'" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script>
+ 
+    if (localStorage.getItem('portfolioTheme') === 'light') {
+      document.documentElement.classList.add('light-init');
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('light-mode');
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav scrolled" id="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <span class="nav__logo-dot"></span>
+        <span>PORTFOLIO</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="../index.html#intro">Intro</a></li>
+        <li><a href="../index.html#works">Works</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="테마 전환">
+        <span class="icon-dark">Dark</span>
+        <span class="icon-light">Light</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PROJECT HEADER -->
+  <div class="project-header">
+    <a href="../index.html#works" class="project-back">← Back to Works</a>
+
+    <span class="card__tag card__tag--app" style="margin-bottom:20px; display:inline-block;">반응형 웹</span>
+
+    <h1 class="project-title"><br />Vogue</h1>
+
+    <div class="project-meta-row">
+      <div class="project-meta-item">
+        <label>Year</label>
+        <span>2026</span>
+      </div>
+      <div class="project-meta-item">
+        <label>Category</label>
+        <span>Responsive Web Design</span>
+      </div>
+      <div class="project-meta-item">
+        <label>Tools</label>
+        <span>Figma, Photoshop, Antigravity</span>
+      </div>
+      <div class="project-meta-item">
+        <label>Role</label>
+        <span>(team project)<br>Design 50% <br>Publishing 40% <br>Project Plan 60%</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:var(--max-w); margin:0 auto; padding:0 40px;">
+  <a href="https://woa2wo-hub.github.io/vogue0/"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="project-hero-img"
+     aria-label="프로젝트 사이트 방문">
+    <div style="width: 100%; overflow: hidden;">
+      <video
+        autoplay muted loop playsinline
+         oncanplay="this.playbackRate=2"
+        style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <source src="../videos/vogue.mov" type="video/mp4">
+      </video>
+    </div>
+    <span class="hero-img-badge">사이트 방문 →</span>
+  </a>
+</div>
+
+  <!-- PROJECT BODY -->
+  <div class="project-body">
+    <h2>주제 선정 이유</h2>
+    <p>트렌디한 매거진의 화려한 이미지와 정체성을 더욱 잘 반영하고, 사용자 경험을 혁신적으로 개선하기 위해서였습니다.<br> 
+      기존 웹사이트는 정적이고 제한적인 요소들로 인해 보그의 역동적인 매력을 제대로 전달하지 못하고 있었기 때문에, 
+      보다 현대적이고 몰입감 있는 디자인을 통해 브랜드 가치를 강화하고자 리디자인을 진행했습니다. </p>
+
+    <h2>디자인 컨셉</h2>
+    <p>
+      트렌디한 패션 잡지의 화려함을 반영하고, 인터랙티브한 요소를 추가해 몰입감 있는 반응형 웹사이트 디자인을 구현했습니다.
+      세련되고 현대적인 패션 브랜드 이미지를 강조하여 텍스트보다 이미지 중심의 디자인을 채택했습니다
+    </p>
+
+    
+  </div>
+
+ 
+
+  <!-- PREV / NEXT -->
+  <div class="project-nav">
+    <a href="../pages/app-01.html">← 이전 프로젝트</a>
+    <a href="../index.html#works">모든 작품 보기</a>
+    <a href="../pages/responsive-02.html">다음 프로젝트 →</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <span>© 2026 Portfolio. Designed by <strong>KyoungKi</strong></span>
+      <span>Web Designer</span>
+    </div>
+  </footer>
+
+  <script>
+    if (localStorage.getItem('portfolioTheme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+    const tt = document.getElementById('themeToggle');
+    if (tt) {
+      tt.addEventListener('click', () => {
+        const isLight = document.body.classList.toggle('light-mode');
+        localStorage.setItem('portfolioTheme', isLight ? 'light' : 'dark');
+      });
+    }
+    /* nav 스크롤 */
+    const nav = document.getElementById('nav');
+    if (nav) {
+      window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 60);
+      });
+    }
+  </script>
+</body>
+</html>

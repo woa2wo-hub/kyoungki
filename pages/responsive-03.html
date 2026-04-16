@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>프로젝트 제목 — Portfolio</title>
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    onload="this.rel='stylesheet'" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script>
+   
+    if (localStorage.getItem('portfolioTheme') === 'light') {
+      document.documentElement.classList.add('light-init');
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('light-mode');
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav scrolled" id="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <span class="nav__logo-dot"></span>
+        <span>PORTFOLIO</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="../index.html#intro">Intro</a></li>
+        <li><a href="../index.html#works">Works</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="테마 전환">
+        <span class="icon-dark">Dark</span>
+        <span class="icon-light">Light</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PROJECT HEADER -->
+  <div class="project-header">
+    <a href="../index.html#works" class="project-back">← Back to Works</a>
+
+    <span class="card__tag card__tag--app" style="margin-bottom:20px; display:inline-block;">반응형 웹</span>
+
+    <h1 class="project-title">드림이든&nbsp; 소아치과</h1>
+
+    <div class="project-meta-row">
+      <div class="project-meta-item">
+        <label>Year</label>
+        <span>2025</span>
+      </div>
+      <div class="project-meta-item">
+        <label>Category</label>
+        <span>Responsive Web Design</span>
+      </div>
+      <div class="project-meta-item">
+        <label>Tools</label>
+        <span>Figma, Photoshop, Gpt</span>
+      </div>
+      <div class="project-meta-item">
+        <label>Role</label>
+        <span>Web Designer</span>
+      </div>
+    </div>
+  </div>
+  
+   <div style="max-width:var(--max-w); margin:0 auto; padding:0 40px;">
+   <a href="https://woa2wo-hub.github.io/dreameden/"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="project-hero-img"
+     aria-label="프로젝트 사이트 방문">
+    <div style="width: 100%; overflow: hidden;">
+      <video
+        autoplay muted loop playsinline
+         oncanplay="this.playbackRate=2"
+        style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <source src="../videos/Dream.mov" type="video/mp4">
+      </video>
+    </div>
+    <span class="hero-img-badge">사이트 방문 →</span>
+    </a>
+    </div>
+
+
+  <!-- PROJECT BODY -->
+  <div class="project-body">
+    <h2>주제 선정 이유</h2>
+    <p>현재 드림 이든 소아치과는 네이버 예약 시스템만을 운영하고 있어, 보다 전문적인 이미지를 제공하고 
+      고객들에게 신뢰감을 주기 위해 자체 홈페이지를 제작하게 되었습니다. 
+      홈페이지를 통해 소아치과의 전문적인 분위기를 강조하고, 병원의 서비스와 정보를 체계적으로 제공할 수 있는 
+      플랫폼을 마련하기 위해 제작했습니다.</p>
+
+    <h2>디자인 컨셉</h2>
+    <p>
+      전문적이면서도 따뜻한 이미지를 강조했습니다. 
+      아이들을 위한 친근한 분위기를 유지하면서도, 부모님들이 신뢰할 수 있는 치과 전문가로서의 이미지를 전달하기 위해 
+      깔끔하고 정돈된 디자인을 채택했습니다. 또한, 방문자가 손쉽게 예약할 수 있도록 직관적인 네비게이션을 제공하며, 
+      치과에 대한 정보와 서비스가 잘 정리되어 있어 누구나 쉽게 접근할 수 있도록 설계했습니다.
+    </p>
+</div>
+
+
+
+  <!-- PREV / NEXT -->
+  <div class="project-nav">
+    <a href="../pages/responsive-02.html">← 이전 프로젝트</a>
+    <a href="../index.html#works">모든 작품 보기</a>
+    <a href="../pages/responsive-04.html">다음 프로젝트 →</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <span>© 2024 Portfolio. Designed by <strong>Your Name</strong></span>
+      <span>Web Designer</span>
+    </div>
+  </footer>
+
+  <script>
+    if (localStorage.getItem('portfolioTheme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+    const tt = document.getElementById('themeToggle');
+    if (tt) {
+      tt.addEventListener('click', () => {
+        const isLight = document.body.classList.toggle('light-mode');
+        localStorage.setItem('portfolioTheme', isLight ? 'light' : 'dark');
+      });
+    }
+    /* nav 스크롤 */
+    const nav = document.getElementById('nav');
+    if (nav) {
+      window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 60);
+      });
+    }
+  </script>
+</body>
+</html>

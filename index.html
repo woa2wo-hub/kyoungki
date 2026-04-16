@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Web Designer</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" onload="this.rel='stylesheet'" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script>
+    
+    (function(){
+      if (localStorage.getItem('portfolioTheme') === 'light') {
+        document.documentElement.style.setProperty('color-scheme','light');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-dot"></span>
+        <span>PORTFOLIO</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="#intro">Intro</a></li>
+        <li><a href="#works">Works</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="테마 전환">
+        <span class="icon-dark">Dark</span>
+        <span class="icon-light">Light</span>
+      </button>
+      <button class="nav__hamburger" id="hamburger" aria-label="메뉴 열기">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="#intro">Intro</a>
+      <a href="#works">Works</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="home">
+    <div class="hero__bg-text" aria-hidden="true">DESIGN</div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Web Designer &amp; UI/UX</p>
+      <h1 class="hero__title">
+        사용자의 행동을<br />
+        <span class="hero__title--accent">디자인</span>합니다<br />
+
+      </h1>
+      <p class="hero__desc">
+        사용자 중심의 인터페이스 설계와<br />
+        직관적인 비주얼 커뮤니케이션
+      </p>
+      <a href="#works" class="btn btn--primary">Works 보기</a>
+    </div>
+    <div class="hero__scroll-hint" aria-hidden="true">
+      <span>scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- =====================INTRO ===================== -->
+  <section class="intro section" id="intro">
+    <div class="container">
+      <div class="section-label">INTRO</div>
+      <div class="about__grid">
+        <div class="about__left">
+          <h2 class="about__title">홍<span class="accent">경기</span>입니다</h2>
+          <p class="about__desc">
+            사용자가 직관적으로 이해하고 브랜드가 명확하게 전달되는 디자인을 합니다.
+            <br> UI/UX 디자인과 브랜딩을 통해 사용자와 브랜드가 자연스럽게 연결되는 경험을 제공합니다.
+          </p>
+          <ul class="about__skills">
+            <li>Figma &amp; Adobe XD</li>
+            <li>HTML / CSS / JS</li>
+            <li>Photoshop &amp; Illustrator</li>
+            <li>반응형 웹 디자인</li>
+            <li>브랜드 아이덴티티</li>
+            <li>프로토타이핑</li>
+          </ul>
+        </div>
+        <div class="about__right">
+          <div class="about__stat-grid">
+            <div class="about__stat">
+              <span class="about__stat-num">10</span>
+              <span class="about__stat-label">총 작품 수</span>
+            </div>
+            <div class="about__stat">
+              <span class="about__stat-num">5</span>
+              <span class="about__stat-label">반응형 웹</span>
+            </div>
+            <div class="about__stat">
+              <span class="about__stat-num">1</span>
+              <span class="about__stat-label">앱</span>
+            </div>
+            <div class="about__stat">
+              <span class="about__stat-num">3</span>
+              <span class="about__stat-label">상세페이지</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WORKS ===================== -->
+  <section class="works section" id="works">
+    <div class="container">
+      <div class="section-label">WORKS</div>
+      <h2 class="works__title">Selected <span class="accent">Works</span></h2>
+
+      <!-- FILTER TABS -->
+      <div class="filter" role="tablist">
+        <button class="filter__btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter__btn" data-filter="app" role="tab" aria-selected="false">앱</button>
+        <button class="filter__btn" data-filter="responsive" role="tab" aria-selected="false">반응형 웹</button>
+        <button class="filter__btn" data-filter="detail" role="tab" aria-selected="false">상세페이지</button>
+        <button class="filter__btn" data-filter="branding" role="tab" aria-selected="false">브랜딩</button>
+      </div>
+
+      <!-- GRID -->
+      <div class="works__grid" id="worksGrid">
+
+        <!-- ── 완성형 앱 (1) ── -->
+        <a href="pages/app-01.html" class="card card--featured" data-category="app">
+          <div class="card__img">
+            <img src="images/thumbnails/appthum.jpg" alt="앱 디자인 썸네일" onerror="this.parentElement.classList.add('card__img--placeholder')" />
+            <div class="card__overlay">
+              <span class="card__view-btn">View Project →</span>
+            </div>
+          </div>
+          <div class="card__info">
+            <span class="card__tag card__tag--app">앱</span>
+            <h3 class="card__title">oneday(원데이)</h3>
+            <p class="card__desc">경험 기반의 소셜 매칭 플랫폼</p>
+            <div class="card__meta">
+              <span>2026</span>
+              <span>App Design · UI/UX</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- ── 반응형 웹 (5) ── -->
+        <a href="pages/responsive-01.html" class="card" data-category="responsive">
+          <div class="card__img">
+            <img src="images/thumbnails/voguethum.png" alt="반응형 웹 썸네일" onerror="this.parentElement.classList.add('card__img--placeholder')" />
+            <div class="card__overlay">
+              <span class="card__view-btn">View Project →</span>
+            </div>
+          </div>
+          <div class="card__info">
+            <span class="card__tag card__tag--responsive">반응형 웹</span>
+            <h3 class="card__title">vogue</h3>
+            <p class="card__desc">'re-view'를 주제로 기존 패션 브랜드 웹을 리디자인 (teamproject)</p>
+            <div class="card__meta"><span>2026</span><span>Responsive Web</span></div>
+          </div>
+        </a>
+
+        <a href="pages/responsive-02.html" class="card" data-category="responsive">
+          <div class="card__img">
+            <img src="images/thumbnails/ modocthum.png" alt="반응형 웹 썸네일" onerror="this.parentElement.classList.add('card__img--placeholder')" />
+            <div class="card__overlay">
+              <span class="card__view-btn">View Project →</span>
+            </div>
+          </div>
+          <div class="card__info">
+            <span class="card__tag card__tag--responsive">반응형 웹</span>
+            <h3 class="card__title">모닥</h3>
+            <p class="card__desc">비대면진료서비스 어플을 소개하는 웹사이트</p>
+            <div class="card__meta"><span>2025</span><span>Responsive Web</span></div>
+          </div>
+        </a>
+
+        <a href="pages/responsive-03.html" class="card" data-category="responsive">
+          <div class="card__img">
+            <img src="images/thumbnails/dreamthum.jpg" alt="반응형 웹 썸네일" onerror="this.parentElement.classList.add('card__img--placeholder')" />
+            <div class="card__overlay">
+              <span class="card__view-btn">View Project →</span>
+            </div>
+          </div>
+          <div class="card__info">
+            <span class="card__tag card__tag--responsive">반응형 웹</span>
+            <h3 class="card__title">드림이든</h3>
+            <p class="card__desc">소아치과 웹사이트</p>
+            <div class="card__meta"><span>2025</span><span>Responsive Web</span></div>
+          </div>
+        </a>
+
+        <a href="pages/responsive-04.html" class="card" data-category="responsive">
+          <div class="card__img">
+            <img src="images/thumbnails/cafethum.jpg" alt="반응형 웹 썸네일" onerror="this.parentElement.classList.add('card__img--placeholder')" />
+            <div class="card__overlay">
+              <span class="card__view-btn">View Project →</span>
+            </div>
+          </div>
+          <div class="card__info">
+            <span class="card__tag card__tag--responsive">반응형 웹</span>
+            <h3 class="card__title">빈 아뜰리에</h3>
+            <p class="card__desc">b2b판매를 위한 원두 웹사이트</p>
+            <div class="card__meta"><span>2025</span><span>Responsive Web</span></div>
+          </div>
+        </a>
+
+        <a href="pages/responsive-05.html" class="card" data-category="responsive">
+          <div class="card__img">
+            <img src="images/thumbnails/tripthum.png" alt="반응형 웹 썸네일" onerror="this.parentElement.classList.add('card__img--placeholder')" />
+            <div class="card__overlay">
+              <span class="card__view-btn">View Project →</span>
+            </div>
+          </div>
+          <div class="card__info">
+            <span class="card__tag card__tag--responsive">반응형 웹</span>
+            <h3 class="card__title">리얼투어</h3>
+            <p class="card__desc">연말 여행 프로모션 웹사이트</p>
+            <div class="card__meta"><span>2025</span><span>Responsive Web</span></div>
+          </div>
+        </a>
+
+        <!-- ── 상세페이지 (3) ── -->
+        <a href="pages/detail-01.html" class="card" data-category="detail">
+          <div class="card__img">
+            <img src="images/thumbnails/tripdetail.png" alt="상세페이지 썸네일" onerror="this.parentElement.classList.add('card__img--placeholder')" />
+            <div class="card__overlay">
+              <span class="card__view-btn">View Project →</span>
+            </div>
+          </div>
+          <div class="card__info">
+            <span class="card__tag card__tag--detail">상세페이지</span>
+            <h3 class="card__title">리얼투어 뉴욕 투어상품</h3>
+            <p class="card__desc">크리스마스 프로모션 상품 소개</p>
+            <div class="card__meta"><span>2025</span><span>Detail Page</span></div>
+          </div>
+        </a>
+
+        <a href="pages/detail-02.html" class="card" data-category="detail">
+          <div class="card__img">
+            <img src="images/thumbnails/ringdetail.png" alt="상세페이지 썸네일" onerror="this.parentElement.classList.add('card__img--placeholder')" />
+            <div class="card__overlay">
+              <span class="card__view-btn">View Project →</span>
+            </div>
+          </div>
+          <div class="card__info">
+            <span class="card__tag card__tag--detail">상세페이지</span>
+            <h3 class="card__title">누베델리 웨이비링</h3>
+            <p class="card__desc">웨이비링 상품 소개</p>
+            <div class="card__meta"><span>2025</span><span>Detail Page</span></div>
+          </div>
+        </a>
+
+        <a href="pages/detail-03.html" class="card" data-category="detail">
+          <div class="card__img">
+            <img src="images/thumbnails/cookiedetail.png" alt="상세페이지 썸네일" onerror="this.parentElement.classList.add('card__img--placeholder')" />
+            <div class="card__overlay">
+              <span class="card__view-btn">View Project →</span>
+            </div>
+          </div>
+          <div class="card__info">
+            <span class="card__tag card__tag--detail">상세페이지</span>
+            <h3 class="card__title">브로큰쿠키</h3>
+            <p class="card__desc">주문안내&제품소개</p>
+            <div class="card__meta"><span>2023</span><span>Detail Page</span></div>
+          </div>
+        </a>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT (자기소개) ===================== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-label">ABOUT</div>
+      <div class="intro__grid">
+        <div class="intro__photo">
+          <div class="intro__photo-wrap">
+            <img src="images/about/IMG_7692.JPG" alt="프로필 사진" onerror="this.style.display='none'" />
+          </div>
+          <div class="intro__deco"></div>
+        </div>
+        <div class="intro__text">
+          <h2 class="intro__title">
+            
+            <span class="accent">디자인으로</span><br>이야기합니다
+          </h2>
+          <div class="intro__body">
+       
+            <p>
+              저는 사용자 경험을 중심에 두고 시각적으로 기억에 남는
+              디자인을 만드는 웹 디자이너입니다.
+              <br>단순히 예쁜 화면을 만드는 것을 넘어, 사용자가 행동하는
+              흐름과 구조를 함께 고민하겠습니다.
+            </p>
+          </div>
+
+       
+          <div class="intro__timeline">
+            <div class="intro__timeline-item">
+              <span class="intro__timeline-year">사용해본 AI</span>
+              <div class="intro__timeline-content">
+                <strong>Replit, Antigravity, Claude, Gpt, Midjourney, Nanobanana</strong>
+                <span>AI 도구를 활용하여 작업 효율을 30% 향상시켰습니다. 반복적인 작업을 자동화하고 시간을 절약하는 데 큰 도움이 되었으며, 5일 만에 노코드 앱을 완성할 수 있었습니다. 
+                  덕분에 더 필요한 작업에 집중할 수 있었고, 프로젝트의 완성도를 높이며 효율적으로 마무리할 수 있었습니다.</span>
+              </div>
+            </div>
+            <div class="intro__timeline-item">
+              <span class="intro__timeline-year">자기평가</span>
+              <div class="intro__timeline-content">
+                <strong>집중과 성장</strong>
+                <span>여러 가지 분야에 관심을 두고 다양한 경험을 쌓아왔습니다. 
+                  새로운 것을 빠르게 배우고 적응하는 능력이 있지만, 그만큼 한 가지 일에 집중하는 데 부족함이 있었습니다. 
+                  이를 개선하기 위해, 작은 일이라도 끝까지 책임지고 맡겠다는 자세로 노력하고 있습니다. 
+                  앞으로 더 깊이 있는 전문성을 키우기 위해, 주어진 일에 대해 시작과 마무리를 책임질 수 있도록 체계적으로 노력하겠습니다.</span>
+              </div>
+            </div>
+            <div class="intro__timeline-item">
+              <span class="intro__timeline-year">좌우명</span>
+              <div class="intro__timeline-content">
+                <strong>유능함을 넘어 유용함으로</strong>
+                <span>단순히 능력을 발휘하는 것보다, 실제로 문제를 해결하고 팀에 기여하는 방식으로 더 큰 가치를 만들고 싶습니다. 
+                  맡은 일을 효율적이고 실용적인 방식으로 풀어가며, 팀과 회사 목표에 도움을 줄 수 있는 사람이 되고자 합니다.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== VIDEO ===================== -->
+  <section class="video-section section" id="video">
+    <div class="container">
+      <div class="section-label">VIDEO</div>
+      <h2 class="video-section__title"> 창업으로&nbsp;배우는&nbsp;<span class="accent">실행력</span></h2>
+      <div class="video-grid">
+
+       
+        <div class="video-card">
+          <div class="video-card__embed">
+            <iframe
+              src="https://www.youtube.com/embed/1JOyCINZrm0"
+              title="YouTube video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="video-card__info">
+            <p class="video-card__title">창업 셀프인테리어</p>
+            <p class="video-card__desc">카페 셀프 인테리어 과정의 일부분을 보여주는 편집본입니다. 
+              이 과정에서 제가 배운 교훈은, 현장에서 직접 경험하고 문제를 해결하는 실행력이었습니다. 
+              작업을 진행하면서 해야 할 말을 제때 말하는 것의 중요성을 깨달았고, 
+              아무리 사소한 부분이라도 넘기지 않고 명확하게 전달해야 한다는 점을 배웠습니다. 
+              또한, 어떤 프로젝트이든 준비에는 지나침이 없다는 것을 체감할 수 있었습니다.
+              예기치못한 어려움이 지나고 마침내 완성된 공간에서 얻은 성취감과 문제를 해결하는 과정에서 느낀 자신감은 정말 큰 보람이었습니다.</p>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-label">CONTACT</div>
+      <div class="contact__inner">
+        <h2 class="contact__title">Let's work<br /><span class="accent">together</span></h2>
+        <p class="contact__desc">
+          새로운 프로젝트, 협업 제안 등 어떤 이야기든 환영합니다.
+        </p>
+        <div class="contact__links">
+          <a href="mailto:woa2wo@gmail.com" class="contact__link">
+            <span class="contact__link-icon">✉</span>
+            woa2wo@gmail.com
+          </a>
+          <a href="https://open.kakao.com/o/sWkZTyqi" target="_blank" class="contact__link">
+            <span class="contact__link-icon">💬</span>
+             카카오톡 오픈채팅
+          </a>
+          <a href="tel:01040193576" class="contact__link">
+            <span class="contact__link-icon">📞</span>
+            010-4019-3576
+          </a>
+</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <span>© 2026 Portfolio. Designed by <strong>kyoungki</strong></span>
+      <span>Web Designer</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
