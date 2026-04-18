@@ -378,27 +378,43 @@
         <p class="contact__desc">
           새로운 프로젝트, 협업 제안 등 어떤 이야기든 환영합니다.
         </p>
-        <div class="contact__links">
-          <a href="images/hkk.pdf" target="_blank" class="contact__link">
-          <span class="contact__link-icon">📄</span>
-          이력서
-          </a>
-          <a href="mailto:woa2wo@gmail.com" class="contact__link">
-            <span class="contact__link-icon">✉</span>
-            woa2wo@gmail.com
-          </a>
-          <a href="https://open.kakao.com/o/sWkZTyqi" target="_blank" class="contact__link">
-            <span class="contact__link-icon">💬</span>
-             카카오톡 오픈채팅
-          </a>
-          <a href="tel:01040193576" class="contact__link">
-            <span class="contact__link-icon">📞</span>
-            010-4019-3576
-          </a>
-</div>
-        </div>
-      </div>
+      <div class="contact__links">
+  <!-- 출퇴근 소요시간 -->
+  <div class="contact__link" style="cursor:default; display:flex; align-items:center;">
+    <span class="contact__link-icon">🚇</span>
+    <span style="font-size:14px; font-weight:700;">출퇴근 소요시간</span>
+    <div style="display:flex; align-items:center; gap:12px; padding:8px 16px; margin-left:auto;">
+      <select id="commuteSelect" onchange="updateTime()"
+        style="background:transparent; border:none; font-size:14px; font-weight:600; color:var(--text); cursor:pointer; outline:none;">
+        <option value="50">강남</option>
+        <option value="70">을지로</option>
+        <option value="25">정자</option>
+        <option value="65">잠실</option>
+        <option value="75">왕십리</option>
+        <option value="40">수원</option>
+      </select>
+      <span style="width:1px; height:14px; background:var(--text); opacity:0.2;"></span>
+      <span id="commuteTime" style="font-size:14px; font-weight:700;">50분</span>
     </div>
+  </div>
+
+  <a href="images/hkk.pdf" target="_blank" class="contact__link">
+    <span class="contact__link-icon">📄</span>
+    이력서
+  </a>
+  <a href="mailto:woa2wo@gmail.com" class="contact__link">
+    <span class="contact__link-icon">✉</span>
+    woa2wo@gmail.com
+  </a>
+  <a href="https://open.kakao.com/o/sWkZTyqi" target="_blank" class="contact__link">
+    <span class="contact__link-icon">💬</span>
+    카카오톡 오픈채팅
+  </a>
+  <a href="tel:01040193576" class="contact__link">
+    <span class="contact__link-icon">📞</span>
+    010-4019-3576
+  </a>
+</div>
   </section>
 
   <!-- ===================== FOOTER ===================== -->
@@ -410,5 +426,11 @@
   </footer>
 
   <script src="js/main.js"></script>
+   <script>
+    function updateTime() {
+      const val = document.getElementById('commuteSelect').value;
+      document.getElementById('commuteTime').textContent = val + '분';
+    }
+  </script>
 </body>
 </html>
